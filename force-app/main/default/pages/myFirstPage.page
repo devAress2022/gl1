@@ -1,0 +1,13 @@
+<apex:page standardController="Candidate__c" >
+<apex:pageBlock >
+<apex:pageBlockSection title="Username">
+ {!$User.FirstName & " "& $User.LastName}
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Candidate Name">
+ First Name :{!Candidate__c.First_Name__c} <br></br>
+ Last Name : {!Candidate__c.Last_Name__c }
+</apex:pageBlockSection>
+</apex:pageBlock>
+   
+   
+</apex:page>

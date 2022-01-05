@@ -1,0 +1,25 @@
+<apex:page controller="GoogleBookApi" docType="html-5.0">
+    <apex:form >
+        <input type="text" id="testinput"/>
+        <input type="button" onclick="testinputJS()" value="Search" class="btn"/>
+<br/><br/>
+    
+         <apex:pageBlock title="Books">
+      <apex:pageBlockTable value="{!book}" var="bk">
+         <apex:column value="{!bk}"/>
+        
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+        
+        <apex:actionFunction action="{!testinput}" name="passToController" rerender="test">
+            <apex:param value="" name="inpval"/>
+        </apex:actionFunction>
+    </apex:form>
+    <script>
+    function testinputJS(){
+        var str = document.getElementById('testinput').value;
+        
+        passToController(str);
+    }
+    </script>
+</apex:page>

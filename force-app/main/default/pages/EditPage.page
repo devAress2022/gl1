@@ -1,0 +1,57 @@
+<apex:page standardController="Candidate__c">
+    <!--Header  -->
+    <apex:sectionHeader title="Candidate Edit" subtitle="New Capex Member"/>
+    <!--Image tag  -->
+    <apex:image value="https://aress68-dev-ed--c.documentforce.com/servlet/servlet.ImageServer?id=0155g0000019yBL&oid=00D5g0000094sgS&lastMod=1630642406000"
+                styleClass="logo"/>
+    <!--Form tag  -->
+    <apex:form >
+        <!-- Page Block start -->
+        <apex:pageBlock title="Rules of Capex" mode="Edit">
+            <!-- Output Pannel -->
+            <apex:outputPanel styleClass="rules">
+                The First Rule of Capex is : You do not talk about Capex<br />
+                The Secound Rule of Capex is : You do not talk about Capex<br />
+                The Third Rule of Capex is : You do not talk about Capex<br />
+                <!-- iframe tag -->
+                <iframe width="320" height="180" src="https://www.youtube.com/embed/El1DO9Osn_A" />
+                 </apex:outputPanel>
+                <!--page block section  -->
+                <apex:pageBlockSection columns="3" showHeader="true" title="Membership Status">
+                    <!--  -->
+                    <apex:inputField value="{!Candidate__c.First_Name__c}" required="true" />
+                    <apex:inputField value="{!Candidate__c.Last_Name__c}" required="true" />
+                    <apex:pageBlockSectionItem >
+                        <!--  -->
+                        <!--  -->
+                        <apex:outputLabel >Referrer</apex:outputLabel>
+                        <apex:inputField value="{!Candidate__c.Current_Employer__c}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Add Capex Member" action="{!save}"/>
+                </apex:pageBlockButtons>
+                
+                
+           
+            
+        </apex:pageBlock>
+    </apex:form>
+    <!--  -->
+    <style>
+        .logo{
+        float: right;
+        width: 100px;
+        margin: -65px 20px 0 0;
+        }
+        .rules{
+        color: red;
+        font-size:18px;
+        font-family: Courier;
+        margin: 10px 0 10px 30px;
+        float: left;
+        width: 100%;
+        }
+    </style>
+    
+</apex:page>

@@ -1,0 +1,24 @@
+<aura:component  >
+    <aura:attribute name="contact" type="Contact[]" />
+    <lightning:card>
+        <table class="slds-table slds-table_slds-table_bordered slds-table_col-bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="FirstName">Firstname   </div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="LastName">LastName   </div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Email">Email   </div>
+                    </th><th class="" scope="col">
+                        <div class="slds-truncate" title="Add">Add   </div>
+                    </th>
+                </tr>
+            </thead>
+            
+        </table>
+        
+    </lightning:card>	
+</aura:component>

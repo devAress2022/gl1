@@ -1,0 +1,16 @@
+<apex:page controller="HideAndShow" sidebar="false" showHeader="false" >
+<apex:form >
+<p style="font-weight:800; color:#4C0000;">&nbsp;&nbsp;&nbsp;Click the buttons below to experiment Hide and Show.</p>
+    <apex:pageBlock title="Block A" rendered="{!abool}">
+        This is Block A.<br/><br/>       
+    </apex:pageBlock>
+   
+    <apex:pageBlock title="Block B" rendered="{!bbool}">
+        This is Block B.<br/><br/>
+    </apex:pageBlock>   
+   
+    <apex:pageBlock >
+        <apex:commandButton value="Show A" action="{!showA}" rendered="{!sabool}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Show B" action="{!showB}" rendered="{!sbbool}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Hide A" action="{!hideA}" rendered="{!habool}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Hide B" action="{!hideB}" rendered="{!hbbool}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Show A and B" action="{!showAB}" rendered="{!sabbool}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton value="Hide A and B" action="{!hideAB}" rendered="{!habbool}"/>
+    </apex:pageBlock>
+</apex:form>   
+</apex:page>

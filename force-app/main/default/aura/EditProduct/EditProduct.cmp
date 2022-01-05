@@ -1,0 +1,118 @@
+<aura:component controller="EditProduct" Implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId">
+    <aura:attribute name="productList" type="List"/>
+     <aura:attribute name="recordId" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:card>
+        <div class="slds-m-around--xx-large">
+            
+            <div class="container-fluid">        
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered"> 
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate">Sr. No</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Account Name">Product Name</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Phone">Quantity</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Fax">Sales Price</div>
+                            </th>  
+                            <th scope="col">
+                                <div class="slds-truncate" title="Fax">List Price</div>
+                            </th> 
+                            <th scope="col">
+                                <div class="slds-truncate" title="Website">Date</div>
+                            </th>  
+                            <th scope="col">
+                                <div class="slds-truncate" title="Website">Line Description</div>
+                            </th> 
+                            <th scope="col">
+                                <div class="slds-truncate" title="Website">Discount</div>
+                            </th> 
+                            <th scope="col">
+                            <div class="slds-truncate" title="Website">Total Price</div>
+                            </th> 
+                                <th scope="col">
+                            <div class="slds-truncate" title="Website"> Cal</div>
+                            </th> 
+                            <th scope="col">
+                                <div class="slds-truncate" title="Action">Add</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Action">Delete</div>
+                            </th>
+                            
+                        </tr>
+                    </thead>   
+                    <tbody>      
+                        <aura:iteration items="{!v.productList}" var="prod" indexVar="index">
+                            <tr>
+                                <td> 
+                                    {!index + 1}
+                                </td>
+                                <td>
+                                      <!-- <lightning:input  name="name" type="text" maxlength="50" value="{!prod.Name}" /> -->
+                                   {!prod.Name}
+                                </td>
+                                <td>
+                                    <lightning:input   Name="qnt" fieldName="Quantity" type="text"   maxlength="10" value="{!prod.Quantity}" />
+                                  
+                                </td>
+                                <td>
+                                    <lightning:input name="unitprice"   type="text" value="{!prod.UnitPrice}" />
+                                     
+                                </td>
+                                <td>
+                                    <lightning:input name="listprice" type="text" value="{!prod.ListPrice}" />
+                                </td>
+                                <td>
+                                    <lightning:input name="serdate" type="date" value="{!prod.ServiceDate }" />
+                                </td>
+                                <td>
+                                    <lightning:input name="desc" type="text" value="{!prod.Description}" />
+                                </td>
+                                <td>
+                                    <lightning:input name="Discount"   type="text" value="{!prod.Discount}" />
+                                </td>
+                                <td>
+                                    <lightning:input name="123"  type="text" value="{!prod.TotalPrice}"  disabled="true" />
+                                </td>
+                                 <td>        
+                                    <a onclick="{!c.calDiscount}" data-record="{!index}">
+                                        <lightning:icon iconName="action:manage_perm_sets" size="small" variant="destructive"   alternativeText="add"/>
+                                        <span class="slds-assistive-text">Calculate</span>
+                                    </a>
+                                    
+                                    
+                                </td> 
+                                <td>        
+                                    <a onclick="{!c.addRow}" data-record="{!index}">
+                                        <lightning:icon iconName="action:new" size="small" variant="destructive"   alternativeText="add"/>
+                                        <span class="slds-assistive-text">add</span>
+                                    </a>
+                                    
+                                    
+                                </td> 
+                                <td>
+                                    <a onclick="{!c.removeRecord}" data-record="{!index}">
+                                        <lightning:icon iconName="action:delete" size="small" variant="destructive"   alternativeText="Delete"/>
+                                        <span class="slds-assistive-text">Delete</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                        
+                    </tbody>
+                </table>
+             
+                <div class="slds-align_absolute-center slds-p-top_small">
+                    <lightning:button variant="brand" label="Submit" title="Brand action" onclick="{!c.saveAccounts}" />
+                </div>
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>
